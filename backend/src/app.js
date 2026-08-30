@@ -8,7 +8,10 @@ const { notFoundHandler, errorHandler } = require('./middleware/errorHandler');
 
 const app = express();
 
-app.use(cors({ origin: config.corsOrigin }));
+// On Vercel the frontend and backend deploy as separate projects on
+// different subdomains, so allow any origin there; locally stay restricted
+// to config.corsOrigin (see backend/.env.example).
+app.use(cors({ origin: process.env.VERCEL ? true : config.corsOrigin }));
 app.use(express.json());
 app.use(morgan('dev'));
 

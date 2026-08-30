@@ -10,9 +10,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const DATA_FILE = path.join(__dirname, '..', 'data', 'leads.json');
+// Vercel's deployed function filesystem is read-only except for /tmp, which is
+// writable but ephemeral (reset on cold start). Local dev keeps the repo file
+// so `npm start` behaves exactly as documented in the README.
+const DATA_FILE = process.env.VERCEL
+  ? path.join('/tmp', 'leads.json')
+  : path.join(__dirname, '..', 'data', 'leads.json');
 
 function readAll() {
+  if (process.env.VERCEL && !fs.existsSync(DATA_FILE)) {
+    fs.writeFileSync(DATA_FILE, '[]', 'utf-8');
+  }
   const raw = fs.readFileSync(DATA_FILE, 'utf-8');
   try {
     return JSON.parse(raw);

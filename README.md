@@ -4,6 +4,11 @@ A web-based lead intake portal where partners/prospective borrowers enter gold c
 to get a preliminary gold loan offer, plus a partner/admin dashboard of collected leads. Built for
 the Yellow Metal Full-Stack Developer Intern take-home assignment.
 
+**Live demo:** https://frontend-umber-eta-87.vercel.app (frontend on Vercel, calling a separate
+Express backend also deployed on Vercel at https://backend-kappa-nine-70.vercel.app/api/v1). The
+demo backend persists leads to `/tmp` on Vercel's serverless filesystem, so data may reset between
+cold starts — for a durable run, use the local setup below.
+
 See [`AI_LOG.md`](./AI_LOG.md) for the AI-assisted development log (tools used, prompts, and an
 audited AI-generated bug fix), and [`DESIGN.md`](./DESIGN.md) for the token-driven visual design
 system (Minimalism & Swiss Style + a black/gold/white palette, generated via the `ui-ux-pro-max`
