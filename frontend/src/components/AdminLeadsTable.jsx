@@ -25,10 +25,10 @@ export default function AdminLeadsTable({ leads }) {
             <tr key={lead.applicationId}>
               <td>{lead.customerName}</td>
               <td>{maskMobile(lead.mobileNumber)}</td>
-              <td>{formatGrams(lead.netWeightGrams)}</td>
+              <td className="tabular-nums">{formatGrams(lead.netWeightGrams)}</td>
               <td>{lead.purityKarat}K</td>
               <td>{lead.selectedPlanName}</td>
-              <td>{formatInr(lead.calculatedLoanAmountInr)}</td>
+              <td className="tabular-nums">{formatInr(lead.calculatedLoanAmountInr)}</td>
               <td>
                 <span className="status-pill">{lead.status}</span>
               </td>

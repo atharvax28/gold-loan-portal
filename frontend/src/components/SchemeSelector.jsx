@@ -35,7 +35,11 @@ export default function SchemeSelector({ form, onChange, onBack, onNext, schemes
       <h3 className="section-title">Select a Loan Plan</h3>
 
       {loading && <p>Loading available schemes…</p>}
-      {error && <p className="field-error">Could not load loan schemes: {error}</p>}
+      {error && (
+        <p className="field-error" role="alert">
+          Could not load loan schemes: {error}
+        </p>
+      )}
 
       <div className="scheme-grid">
         {schemes.map((scheme) => {
@@ -46,6 +50,7 @@ export default function SchemeSelector({ form, onChange, onBack, onNext, schemes
               type="button"
               key={scheme.planId}
               className={`scheme-card ${isSelected ? 'scheme-card--selected' : ''}`}
+              aria-pressed={isSelected}
               onClick={() => onChange({ ...form, selectedPlanId: scheme.planId })}
             >
               <span className="scheme-card__name">{scheme.name}</span>

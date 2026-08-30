@@ -5,7 +5,9 @@ to get a preliminary gold loan offer, plus a partner/admin dashboard of collecte
 the Yellow Metal Full-Stack Developer Intern take-home assignment.
 
 See [`AI_LOG.md`](./AI_LOG.md) for the AI-assisted development log (tools used, prompts, and an
-audited AI-generated bug fix).
+audited AI-generated bug fix), and [`DESIGN.md`](./DESIGN.md) for the token-driven visual design
+system (Minimalism & Swiss Style + a black/gold/white palette, generated via the `ui-ux-pro-max`
+design skill and tailored for a gold-lending NBFC).
 
 ## Stack
 

@@ -1,3 +1,5 @@
+import { CheckIcon } from './icons';
+
 const STEPS = [
   { step: 1, label: 'Customer & Gold Details' },
   { step: 2, label: 'Loan Calculator & Scheme' },
@@ -11,7 +13,7 @@ export default function StepIndicator({ currentStep }) {
         const state = step === currentStep ? 'active' : step < currentStep ? 'done' : 'upcoming';
         return (
           <li key={step} className={`step-indicator__item step-indicator__item--${state}`}>
-            <span className="step-indicator__bubble">{step < currentStep ? '✓' : step}</span>
+            <span className="step-indicator__bubble">{step < currentStep ? <CheckIcon size={14} /> : step}</span>
             <span className="step-indicator__label">{label}</span>
           </li>
         );

@@ -63,7 +63,7 @@ export default function CustomerGoldForm({ form, onChange, onNext }) {
           value={form.customerName}
           onChange={(e) => handleField('customerName', e.target.value)}
         />
-        {isDirty && errors.customerName && <span className="field-error">{errors.customerName}</span>}
+        {isDirty && errors.customerName && <span className="field-error" role="alert">{errors.customerName}</span>}
       </div>
 
       <div className="field">
@@ -77,7 +77,7 @@ export default function CustomerGoldForm({ form, onChange, onNext }) {
           value={form.mobileNumber}
           onChange={(e) => handleField('mobileNumber', e.target.value.replace(/\D/g, ''))}
         />
-        {isDirty && errors.mobileNumber && <span className="field-error">{errors.mobileNumber}</span>}
+        {isDirty && errors.mobileNumber && <span className="field-error" role="alert">{errors.mobileNumber}</span>}
       </div>
 
       <div className="field-row">
@@ -92,7 +92,7 @@ export default function CustomerGoldForm({ form, onChange, onNext }) {
             value={form.grossWeightGrams}
             onChange={(e) => handleField('grossWeightGrams', e.target.value)}
           />
-          {isDirty && errors.grossWeightGrams && <span className="field-error">{errors.grossWeightGrams}</span>}
+          {isDirty && errors.grossWeightGrams && <span className="field-error" role="alert">{errors.grossWeightGrams}</span>}
         </div>
 
         <div className="field">
@@ -106,7 +106,7 @@ export default function CustomerGoldForm({ form, onChange, onNext }) {
             value={form.netWeightGrams}
             onChange={(e) => handleField('netWeightGrams', e.target.value)}
           />
-          {isDirty && errors.netWeightGrams && <span className="field-error">{errors.netWeightGrams}</span>}
+          {isDirty && errors.netWeightGrams && <span className="field-error" role="alert">{errors.netWeightGrams}</span>}
         </div>
       </div>
 

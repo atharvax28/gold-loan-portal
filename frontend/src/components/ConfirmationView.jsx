@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { submitLead } from '../api/client';
 import { formatInr, formatGrams } from '../utils/format';
+import { CheckIcon } from './icons';
 
 export default function ConfirmationView({ form, schemes, onBack, onSubmitted, submittedLead }) {
   const [submitting, setSubmitting] = useState(false);
@@ -40,7 +41,9 @@ export default function ConfirmationView({ form, schemes, onBack, onSubmitted, s
   if (submittedLead) {
     return (
       <div className="card confirmation">
-        <div className="confirmation__badge">✓</div>
+        <div className="confirmation__badge">
+          <CheckIcon size={24} />
+        </div>
         <h2>Application Submitted</h2>
         <p className="confirmation__subtitle">
           Your preliminary gold loan offer has been recorded. Our team will reach out to complete verification.
@@ -96,7 +99,11 @@ export default function ConfirmationView({ form, schemes, onBack, onSubmitted, s
         </div>
       </dl>
 
-      {error && <p className="field-error field-error--block">{error}</p>}
+      {error && (
+        <p className="field-error field-error--block" role="alert">
+          {error}
+        </p>
+      )}
 
       <div className="btn-row">
         <button type="button" className="btn btn-secondary" onClick={onBack} disabled={submitting}>
