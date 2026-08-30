@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import LeadIntakePage from './pages/LeadIntakePage';
 import AdminPage from './pages/AdminPage';
+import { LogoIcon } from './components/icons';
 
 export default function App() {
   const [view, setView] = useState('apply');
@@ -9,22 +10,7 @@ export default function App() {
     <div className="app-shell">
       <header className="app-header">
         <div className="app-header__brand">
-          <svg
-            className="app-header__logo"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M6 7h12l3 6-8.5 8L4 13l2-6Z"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <LogoIcon className="app-header__logo" size={22} aria-hidden="true" />
           <span>Yellow Metal</span>
         </div>
         <nav className="app-header__nav">
